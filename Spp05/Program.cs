@@ -9,7 +9,7 @@ namespace Spp05
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Zadej smajlíka: ");
+ 		    Console.WriteLine("Zadej smajlíka: ");
             string smajlik = Console.ReadLine();
             switch (smajlik)
             {
@@ -25,11 +25,25 @@ namespace Spp05
                 case ":-P":
                     Console.WriteLine("Tvůj smajlík je s vyplazeným jazykem");
                     break;
+                case ":)":
+                    Console.WriteLine("Tvůj smajlík je veselý");
+                    break;
+                case ":(":
+                    Console.WriteLine("Tvůj smajlík je smutný");
+                    break;
+                case ":*":
+                    Console.WriteLine("Tvůj smajlík je zamilovaný");
+                    break;
+                case ":P":
+                    Console.WriteLine("Tvůj smajlík je s vyplazeným jazykem");
+                    break;
                 default:
                     Console.WriteLine("Tvůj smajlík je neznámý");
                     break;
             }
-            Console.ReadLine();
-        }
+Console.ReadLine();
+
+
+		}
     }
 }
