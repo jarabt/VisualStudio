@@ -12,7 +12,7 @@ namespace Jp06
             Console.WriteLine("Kolik ryb si dáš k večeři?");
             int pocet = int.Parse(Console.ReadLine());
             for (int i = 0; i < pocet; i++)
-                Console.WriteLine("<° )))-<");
+                Console.WriteLine("<° )))-<\n");
             Console.ReadLine();
 
         }
