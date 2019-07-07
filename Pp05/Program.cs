@@ -9,12 +9,13 @@ namespace Pp05
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Zadejte postlupně koeficienty a,b,c kvadratické rovnice ax^2+bx+c=0");
+ 		    Console.WriteLine("Zadejte postupně koeficienty a,b,c kvadratické rovnice ax^2+bx+c=0 :");
             double a = double.Parse(Console.ReadLine());
             double b = double.Parse(Console.ReadLine());
             double c = double.Parse(Console.ReadLine());
 
             double d = b * b - 4 * a * c;
+            
             if (a == 0)
                 Console.WriteLine("Není kvadratická rovnice");
             else if (d < 0)
@@ -31,9 +32,6 @@ namespace Pp05
                 Console.WriteLine("Rovnice má 2 reálné kořeny x1 = " + x1 + ", x2 = " + x2);
             }
             Console.ReadLine();
-
-
-
         }
     }
 }
