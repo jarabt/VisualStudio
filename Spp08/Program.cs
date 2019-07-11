@@ -16,7 +16,7 @@ namespace Spp08
 
             while (dale == "ano")
             {
-                Console.Write("Zadej název libovolného ovoce nebo zeleniny: ");
+                Console.WriteLine("Zadej název libovolného ovoce nebo zeleniny: ");
                 string zadani = Console.ReadLine().Trim().ToLower();
                 if (zelenina.Contains(zadani))
                     Console.WriteLine("Zadal jsi zeleninu");
