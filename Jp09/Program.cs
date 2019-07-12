@@ -9,8 +9,9 @@ namespace Jp09
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("ASCII tabulka\n=============");
             for (int i = 0; i < 256; i++)
-                Console.Write("{0}:{1}\t", i, (char)i);
+                Console.Write("{0}:{1}  ", i, (char)i);
             Console.ReadKey();
 
         }
