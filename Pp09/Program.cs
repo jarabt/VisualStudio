@@ -9,26 +9,24 @@ namespace Pp09
     {
         static void Main(string[] args)
         {
-            string s = "moribundus";
-            string password = "ahoj";
+            Console.Write("Zadejte text k zašifrování: ");
+            string s = Console.ReadLine().Trim().ToLower();
+            Console.Write("Zadejte heslo: ");
+            string password = Console.ReadLine().Trim().ToLower();
             string password_full = "";
             int length = s.Length;
             int index = 0;
             string encrypted = "";
+            int ascii;
+            int new_ascii;
             for (int i = 0; i < length; i++)
             {
                 if (index > password.Length - 1)
                     index = 0;                
                 password_full += password[index];
-                index += 1;
-            }
-
-            int ascii;
-            int new_ascii;
-            for (int j = 0; j < length; j++)
-            {
-                ascii = (int)s[j];
-                new_ascii = ascii + ((int)password_full[j] - ((int)'a' - 1));
+                index += 1;            
+                ascii = (int)s[i];
+                new_ascii = ascii + ((int)password_full[i] - ((int)'a' - 1));
                 if (new_ascii > (int)'z')
                     new_ascii -= ((int)'z' - ((int)'a' - 1));
                 encrypted += (char)new_ascii;                
@@ -36,7 +34,6 @@ namespace Pp09
 
             Console.WriteLine(encrypted);
             Console.ReadLine();
-
         }
     }
 }
