@@ -33,6 +33,12 @@ namespace Spp12
                     Console.WriteLine();
                 }
 
+                // sem přijde kontrola remízy nebo výhry
+
+
+
+
+
                 if (counter % 2 == 0)
                     Console.WriteLine("Na řadě je hráč s kolečky");
                 else
@@ -72,6 +78,7 @@ namespace Spp12
 
                     
                 }
+
                 counter++;
                 goOn = true;
 
