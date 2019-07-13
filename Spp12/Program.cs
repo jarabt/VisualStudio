@@ -11,7 +11,8 @@ namespace Spp12
         {
             char[,] hraci_pole = new char[10, 10];
             char[] pole = { ' ', 'O', 'X' };
-
+            bool goOn = true;
+            
             // nadpisy
             for (int i = 1; i < hraci_pole.GetLength(0); i++)
             {
@@ -19,16 +20,19 @@ namespace Spp12
                 hraci_pole[0, i] = number;
                 hraci_pole[i, 0] = number;
             }
-
-                       
-
-            // zobrazeni hraciho pole 
-            for (int i = 0; i < hraci_pole.GetLength(0); i++)
+            
+            while (goOn)
             {
-                for (int j = 0; j < hraci_pole.GetLength(1); j++)
-                    Console.Write(hraci_pole[i, j]);
-                Console.WriteLine();
-            }
+                // zobrazeni hraciho pole 
+                for (int i = 0; i < hraci_pole.GetLength(0); i++)
+                {
+                    for (int j = 0; j < hraci_pole.GetLength(1); j++)
+                        Console.Write(hraci_pole[i, j]);
+                    Console.WriteLine();
+                }
+
+                Console.WriteLine("Na řadě je hráč s kolečky");
+
 
             Console.ReadKey();
                                  
