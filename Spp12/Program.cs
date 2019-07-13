@@ -20,6 +20,8 @@ namespace Spp12
                 hraci_pole[0, i] = number;
                 hraci_pole[i, 0] = number;
             }
+
+            int counter = 0;
             
             while (goOn)
             {
@@ -31,7 +33,49 @@ namespace Spp12
                     Console.WriteLine();
                 }
 
-                Console.WriteLine("Na řadě je hráč s kolečky");
+                if (counter % 2 == 0)
+                    Console.WriteLine("Na řadě je hráč s kolečky");
+                else
+                    Console.WriteLine("Na řadě je hráč s křížky");
+
+                bool badInput = true;
+                while (badInput)
+                {
+                    Console.Write("Zadej pozici X kam chceš táhnout: ");
+                    int inputY;
+                    while (!int.TryParse(Console.ReadLine(), out inputY))
+                        Console.WriteLine("Zadej prosím celé číslo");
+                    Console.Write("Zadej pozici Y kam chceš táhnout: ");
+                    int inputX;
+                    while (!int.TryParse(Console.ReadLine(), out inputX))
+                        Console.WriteLine("Zadej prosím celé číslo");
+                    
+                    if ((0 < inputX) && (inputX < 10) && (0 < inputY) && (inputY < 10))
+                        if (hraci_pole[inputX, inputY] == '\0')
+                        {
+                            if (counter % 2 == 0)
+                                hraci_pole[inputX, inputY] = 'O';
+                            else
+                                hraci_pole[inputX, inputY] = 'X';
+                            badInput = false;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Neplatná pozice, zadej ji prosím znovu.");
+                            badInput = true;
+                        }
+                    else
+                    {
+                        Console.WriteLine("Neplatná pozice, zadej ji prosím znovu.");
+                        badInput = true;
+                    }
+
+                    
+                }
+                counter++;
+                goOn = true;
+
+            }
 
 
             Console.ReadKey();
