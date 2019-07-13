@@ -9,9 +9,8 @@ namespace test
     {
         static void Main(string[] args)
         {
-            string s = "Spal.";
-            s = s.Insert(4, " " + ":)").Remove(7);
-
+            int i = 1;
+            string s = i.ToString();
             Console.WriteLine(s);
             Console.ReadKey();
         }
