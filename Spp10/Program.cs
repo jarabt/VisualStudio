@@ -28,8 +28,10 @@ namespace Spp10
                 string morseuvZnak = "";
                 int index = abecedniZnaky.IndexOf(znak);
                 if (index >= 0) // znak nalezen
+                {
                     morseuvZnak = morseovyZnaky[index];
-                zprava += (morseuvZnak + " ");
+                    zprava += (morseuvZnak + " ");
+                }
             }
 
             Console.WriteLine("Zakódovaná zpráva: {0}", zprava);
