@@ -12,7 +12,7 @@ namespace Spp10
             // řezězec, který chceme zakódovat
             Console.WriteLine("Zadejte zprávu k zakódování:");
             string s = Console.ReadLine().ToLower();
-            Console.WriteLine("Původní zpráva: {0}", s);
+            
             // řetězec se zakódovanou zprávou
             string zprava = "";
 
