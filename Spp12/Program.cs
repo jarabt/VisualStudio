@@ -12,10 +12,15 @@ namespace Spp12
             char[,] hraci_pole = new char[10, 10];
             char[] pole = { ' ', 'O', 'X' };
 
+            // nadpisy
             for (int i = 1; i < hraci_pole.GetLength(0); i++)
-                hraci_pole[0, i] = char.Parse(i.ToString());
+            {
+                char number = char.Parse(i.ToString());
+                hraci_pole[0, i] = number;
+                hraci_pole[i, 0] = number;
+            }
 
-
+                       
 
             // zobrazeni hraciho pole 
             for (int i = 0; i < hraci_pole.GetLength(0); i++)
