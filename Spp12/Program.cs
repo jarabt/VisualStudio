@@ -25,11 +25,31 @@ namespace Spp12
             
             while (goOn)
             {
-                // zobrazeni hraciho pole 
+                // zobrazeni hraciho pole
+                int[] inColumn = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }; // testing of O in a column
                 for (int i = 0; i < hraci_pole.GetLength(0); i++)
                 {
+                    int inRowO = 0; // testing of O in row
+                    
                     for (int j = 0; j < hraci_pole.GetLength(1); j++)
+                    {
+
                         Console.Write(hraci_pole[i, j]);
+                        // checking victory ROW
+                        if (hraci_pole[i, j] == 'O')
+                        {
+                            inRowO += 1;
+                            inColumn[j] += 1;
+                        }
+                        else
+                        {
+                            inRowO = 0;
+                            inColumn[j] = 0;
+                        }
+                        if ((inRowO == 5) || (inColumn.Contains(5)))
+                            Console.WriteLine("Vyhraly koleceka");
+                    }
+
                     Console.WriteLine();
                 }
 
