@@ -28,7 +28,8 @@ namespace Spp12
                 // zobrazeni hraciho pole
                 int[] inColumn =        { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }; // testing of O in a column
                 int[] diagDecreasing  = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }; // testing of decreasing diag
-               
+                int[] diagIncreasing =  { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }; // testing of increasing diag
+
                 for (int i = 0; i < hraci_pole.GetLength(0); i++)
                 {
                     int inRowO = 0; // testing of O in row
@@ -44,13 +45,17 @@ namespace Spp12
                             inColumn[j] += 1;
                             if (Math.Abs(i - j) < 5)
                                 diagDecreasing[(4 + (j - i))]++;
+                            if (((i + j) < 15) && ((i + j) > 5))
+                                diagIncreasing[((j + i) - 6)]++;
                         }
                         else
                         {
                             inRowO = 0;
                             inColumn[j] = 0;
+                            diagDecreasing[(4 + (j - i))] = 0;
+                            diagIncreasing[((j + i) - 6)] = 0;
                         }
-                        if ((inRowO == 5) || (inColumn.Contains(5)) || (diagDecreasing.Contains(5)))
+                        if ((inRowO == 5) || (inColumn.Contains(5)) || (diagDecreasing.Contains(5)) || (diagIncreasing.Contains(5)))
                             Console.WriteLine("Vyhraly koleceka");
                     }
 
