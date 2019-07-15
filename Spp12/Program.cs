@@ -12,7 +12,7 @@ namespace Spp12
             char[,] hraci_pole = new char[10, 10];
             char[] pole = { ' ', 'O', 'X' };
             bool goOn = true;
-            int counter = 78;
+            int counter = 0;
 
             // nadpisy
             for (int i = 1; i < hraci_pole.GetLength(0); i++)
@@ -108,21 +108,21 @@ namespace Spp12
                 // "O" victory
                 if (victoryO)
                 {
-                    Console.Write("Vyhrál hráč s kolečky");
+                    Console.WriteLine("Vyhrál hráč s kolečky");
                     goOn = false;
                 }
 
                 // "X" victory
                 else if (victoryX)
                 {
-                    Console.Write("Vyhrál hráč s křížky");
+                    Console.WriteLine("Vyhrál hráč s křížky");
                     goOn = false;
                 }
 
                 // checking of tie - full desk
                 else if (counter == 81)
                 {
-                    Console.Write("Remíza.");
+                    Console.WriteLine("Remíza.");
                     goOn = false;
                 }
 
@@ -138,11 +138,11 @@ namespace Spp12
                     bool badInput = true;
                     while (badInput)
                     {
-                        Console.Write("Zadej pozici X kam chceš táhnout: ");
+                        Console.Write("Zadej pozici X kam chceš tahnout: ");
                         int inputY;
                         while (!int.TryParse(Console.ReadLine(), out inputY))
                             Console.WriteLine("Zadej prosím celé číslo");
-                        Console.Write("Zadej pozici Y kam chceš táhnout: ");
+                        Console.Write("Zadej pozici Y kam chceš tahnout: ");
                         int inputX;
                         while (!int.TryParse(Console.ReadLine(), out inputX))
                             Console.WriteLine("Zadej prosím celé číslo");
@@ -171,6 +171,7 @@ namespace Spp12
                     }
 
                     counter++;
+                    Console.WriteLine();
                 }
 
             }
