@@ -9,7 +9,7 @@ namespace Spp12
     {
         static void Main(string[] args)
         {
-            char[,] hraci_pole = new char[10, 10]; 
+            char[,] hraci_pole = new char[10, 10];
             char[] pole = { ' ', 'O', 'X' };
             bool goOn = true;
             int counter = 0;
@@ -24,7 +24,7 @@ namespace Spp12
             
             while (goOn)
             {
-                // showing of desk and + checking of victory
+                // checking of victory
 
                 bool victoryO = false;
                 bool victoryX = false;
@@ -35,9 +35,7 @@ namespace Spp12
                 int[] diagDecreasingO = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }; // testing of O decreasing diag
                 int[] diagDecreasingX = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }; // testing of X decreasing diag
                 int[] diagIncreasingO = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }; // testing of O increasing diag
-                int[] diagIncreasingX = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }; // testing of X increasing diag
-
-                
+                int[] diagIncreasingX = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }; // testing of X increasing diag                
 
                 for (int i = 0; i < hraci_pole.GetLength(0); i++)
                 {
@@ -45,9 +43,7 @@ namespace Spp12
                     int inRowX = 0; // testing of X in row
 
                     for (int j = 0; j < hraci_pole.GetLength(1); j++)
-                    {
-                        Console.Write(hraci_pole[i, j]);
-
+                    {                        
                         // sumarizing of variables for checking of "O" victory
                         if (hraci_pole[i, j] == 'O')
                         {
@@ -102,8 +98,24 @@ namespace Spp12
                     if ((inColumnX.Contains(5)) || (diagDecreasingX.Contains(5)) || (diagIncreasingX.Contains(5)))
                         victoryX = true;
 
+                    
+                }
+
+                //  showing of the desk 
+                for (int i = 0; i < hraci_pole.GetLength(0); i++)
+                {
+                    
+                    for (int j = 0; j < hraci_pole.GetLength(1); j++)
+                    {
+                        if (j == 1)
+                            Console.Write(" ");
+                        Console.Write(hraci_pole[i, j]);                  
+                    }
                     Console.WriteLine();
                 }
+
+
+
 
                 // "O" victory
                 if (victoryO)
@@ -171,7 +183,10 @@ namespace Spp12
                     }
 
                     counter++;
+                    Console.Clear();
                 }
+
+                
 
             }
 
