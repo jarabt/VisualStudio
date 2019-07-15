@@ -9,7 +9,7 @@ namespace Spp12
     {
         static void Main(string[] args)
         {
-            char[,] hraci_pole = new char[10, 10];
+            char[,] hraci_pole = new char[10, 10]; 
             char[] pole = { ' ', 'O', 'X' };
             bool goOn = true;
             int counter = 0;
