@@ -108,26 +108,28 @@ namespace Spp12
                 // "O" victory
                 if (victoryO)
                 {
-                    Console.WriteLine("Vyhrál hráč s kolečky");
+                    Console.Write("Vyhrál hráč s kolečky");
                     goOn = false;
                 }
 
                 // "X" victory
                 else if (victoryX)
                 {
-                    Console.WriteLine("Vyhrál hráč s křížky");
+                    Console.Write("Vyhrál hráč s křížky");
                     goOn = false;
                 }
 
                 // checking of tie - full desk
                 else if (counter == 81)
                 {
-                    Console.WriteLine("Remíza.");
+                    Console.Write("Remíza.");
                     goOn = false;
                 }
 
                 else
                 {
+                    Console.WriteLine();
+
                     if (counter % 2 == 0)
                         Console.WriteLine("Na řadě je hráč s kolečky");
                     else
