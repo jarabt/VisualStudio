@@ -12,7 +12,7 @@ namespace Spp12
             char[,] hraci_pole = new char[10, 10];
             char[] pole = { ' ', 'O', 'X' };
             bool goOn = true;
-            int counter = 0;
+            int counter = 78;
 
             // nadpisy
             for (int i = 1; i < hraci_pole.GetLength(0); i++)
@@ -26,6 +26,9 @@ namespace Spp12
             {
                 // showing of desk and + checking of victory
 
+                bool victoryO = false;
+                bool victoryX = false;
+
                 // declaring and clearing of arrays for checking of victory
                 int[] inColumnO =       { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }; // testing of O in a column
                 int[] inColumnX =       { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }; // testing of X in a column
@@ -34,13 +37,12 @@ namespace Spp12
                 int[] diagIncreasingO = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }; // testing of O increasing diag
                 int[] diagIncreasingX = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }; // testing of X increasing diag
 
-                int inRowO = 0; // testing of O in row
-                int inRowX = 0; // testing of X in row
+                
 
                 for (int i = 0; i < hraci_pole.GetLength(0); i++)
                 {
-                    inRowO = 0; 
-                    inRowX = 0;
+                    int inRowO = 0; // testing of O in row
+                    int inRowX = 0; // testing of X in row
 
                     for (int j = 0; j < hraci_pole.GetLength(1); j++)
                     {
@@ -86,28 +88,39 @@ namespace Spp12
                                 diagIncreasingX[((j + i) - 6)] = 0;
                             }
                         }
-
+                        // checking of "O" victory
+                        if (inRowO == 5)
+                            victoryO = true;
+                        // checking of "X" victory
+                        if (inRowX == 5)
+                            victoryX = true;
                     }
+                    // checking of "O" victory
+                    if ((inColumnO.Contains(5)) || (diagDecreasingO.Contains(5)) || (diagIncreasingO.Contains(5)))
+                        victoryO = true;
+                    // checking of "X" victory
+                    if ((inColumnX.Contains(5)) || (diagDecreasingX.Contains(5)) || (diagIncreasingX.Contains(5)))
+                        victoryX = true;
 
                     Console.WriteLine();
                 }
 
-                // checking of "O" victory
-                if ((inRowO == 5) || (inColumnO.Contains(5)) || (diagDecreasingO.Contains(5)) || (diagIncreasingO.Contains(5)))
+                // "O" victory
+                if (victoryO)
                 {
                     Console.WriteLine("Vyhrál hráč s kolečky");
                     goOn = false;
                 }
 
-                // checking of "X" victory
-                else if ((inRowX == 5) || (inColumnX.Contains(5)) || (diagDecreasingX.Contains(5)) || (diagIncreasingX.Contains(5)))
+                // "X" victory
+                else if (victoryX)
                 {
                     Console.WriteLine("Vyhrál hráč s křížky");
                     goOn = false;
                 }
 
                 // checking of tie - full desk
-                else if (counter == 80)
+                else if (counter == 81)
                 {
                     Console.WriteLine("Remíza.");
                     goOn = false;
