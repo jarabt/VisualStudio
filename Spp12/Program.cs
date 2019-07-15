@@ -138,12 +138,12 @@ namespace Spp12
                     bool badInput = true;
                     while (badInput)
                     {
-                        Console.Write("Zadej pozici X kam chceš tahnout: ");
+                        int inputX;
                         int inputY;
+                        Console.Write("Zadej pozici X kam chceš tahnout: ");                        
                         while (!int.TryParse(Console.ReadLine(), out inputY))
                             Console.WriteLine("Zadej prosím celé číslo");
-                        Console.Write("Zadej pozici Y kam chceš tahnout: ");
-                        int inputX;
+                        Console.Write("Zadej pozici Y kam chceš tahnout: ");                        
                         while (!int.TryParse(Console.ReadLine(), out inputX))
                             Console.WriteLine("Zadej prosím celé číslo");
 
@@ -171,7 +171,6 @@ namespace Spp12
                     }
 
                     counter++;
-                    Console.WriteLine();
                 }
 
             }
