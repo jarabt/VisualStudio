@@ -28,7 +28,7 @@ namespace test
             int x = 1;
 
             string text = "Ahoj";
-            text.
+            
 
             System.Console.WriteLine("abc" + 1);
             System.Console.Read();
